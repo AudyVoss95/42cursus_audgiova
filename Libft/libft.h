@@ -21,5 +21,6 @@ int	ft_toupper(int c);
 int	ft_tolower(int c);
 int	ft_strlen(char *str);
 void	*ft_memset(void *s, int c, int n);
-void	bzero(void *s, int n);
+void	ft_bzero(void *s, int n);
+void	*memcpy(void *dest, const void *src, int n);
 #endif // DEBUG
