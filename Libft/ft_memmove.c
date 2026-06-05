@@ -11,9 +11,9 @@
 /* ************************************************************************** */
 
 #include "libft.h"
-void	*memmove(void *dest, const void *src, int n);
+void	*ft_memmove(void *dest, const void *src, int n);
 
-void	*memmove(void *dest, const void *src, int n)
+void	*ft_memmove(void *dest, const void *src, int n)
 {
 	unsigned char *ptr_dest;
 	const unsigned char *ptr_src;

@@ -22,7 +22,8 @@ int	ft_tolower(int c);
 int	ft_strlen(char *str);
 void	*ft_memset(void *s, int c, int n);
 void	ft_bzero(void *s, int n);
-void	*memcpy(void *dest, const void *src, int n);
-void	*memmove(void *dest, const void *src, int n);
-void	*strchr(const char *s, int c);
+void	*ft_memcpy(void *dest, const void *src, int n);
+void	*ft_memmove(void *dest, const void *src, int n);
+char	*ft_strchr(const char *s, int c);
+char	*ft_strrchr(const char *s, int c);
 #endif // DEBUG

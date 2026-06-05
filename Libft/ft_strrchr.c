@@ -1,31 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strchr.c                                        :+:      :+:    :+:   */
+/*   ft_strrchr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: audgiova <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/06/05 18:30:04 by audgiova          #+#    #+#             */
-/*   Updated: 2026/06/05 18:30:07 by audgiova         ###   ########.fr       */
+/*   Created: 2026/06/05 19:15:15 by audgiova          #+#    #+#             */
+/*   Updated: 2026/06/05 19:15:17 by audgiova         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include <libft.h>
 
-char	*ft_strchr(const char *s, int c);
+char	*ft_strrchr(const char *s, int c);
 
-char	*ft_strchr(const char *s, int c)
+char	*ft_strrchr(const char *s, int c)
 {
-	int	i;
+	int i;
 
-	i = 0;
-	while (i <= ft_strlen(s))
+	i = ft_strlen(s);
+	while (i >= 0)
 	{
 		if(s[i] == (char) c)
 		{
 			return((char *)&s[i]);
 		}
-		i++;
+		i--;
 	}
-	return('\0');
+	return ('\0');	
 }

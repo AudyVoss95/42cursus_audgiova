@@ -10,9 +10,9 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-void	*memcpy(void *dest, const void *src, int n);
+void	*ft_memcpy(void *dest, const void *src, int n);
 
-void	*memcpy(void *dest, const void *src, int n)
+void	*ft_memcpy(void *dest, const void *src, int n)
 {
 	unsigned char *pointer_dest;
 	const unsigned char *pointer_src;
