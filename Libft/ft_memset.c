@@ -1,22 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_toupper.c                                       :+:      :+:    :+:   */
+/*   ft_memset.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: audgiova <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/06/05 16:43:14 by audgiova          #+#    #+#             */
-/*   Updated: 2026/06/05 16:43:16 by audgiova         ###   ########.fr       */
+/*   Created: 2026/06/05 17:13:56 by audgiova          #+#    #+#             */
+/*   Updated: 2026/06/05 17:13:58 by audgiova         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_toupper(int c);
+void	*ft_memset(void *s, int c, int n);
 
-int ft_toupper(int c)
+void	*ft_memset(void *s, int c, int n)
 {
-	if (c >= 'a' && c <= 'z')
+	unsigned char *pointer;
+
+	pointer = (unsigned char *)s;
+	while (n > 0)
 	{
-		return (c - 32);
+		pointer[n] = (unsigned char) c;	 
+		n--;
 	}
-	return (c);
+	return (pointer);
 }
