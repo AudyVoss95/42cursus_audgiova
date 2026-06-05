@@ -29,7 +29,11 @@ void	*memmove(void *dest, const void *src, int n)
 
 	if(dest > src)
 	{
-		ft_memcpy(ptr_dest, ptr_src, n);
+		while (n > 0)
+		{
+			ptr_dest[n] = ptr_src[n];
+			n--;
+		}
 	}
 	else
 	{
@@ -39,7 +43,7 @@ void	*memmove(void *dest, const void *src, int n)
 			i++;
 		}
 	}
-	return(ptr_dest);
+	return(dest);
 
 
 }
