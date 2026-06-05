@@ -20,6 +20,10 @@ void	*memcpy(void *dest, const void *src, int n)
 	pointer_dest = (unsigned char *)dest;
 	pointer_src = (const unsigned char *)src;
 
+	if(!dest && !src)
+	{
+		return (dest);
+	}
 	while (n > 0)
 	{
 		pointer_dest[n] = pointer_src[n];
