@@ -6,13 +6,11 @@
 /*   By: audgiova <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/05 16:46:42 by audgiova          #+#    #+#             */
-/*   Updated: 2026/06/05 16:46:44 by audgiova         ###   ########.fr       */
+/*   Updated: 2026/06/11 17:35:58 by audgiova         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_tolower(int c);
-
-int ft_tolower(int c)
+int	ft_tolower(int c)
 {
 	if (c >= 'A' && c <= 'Z')
 	{

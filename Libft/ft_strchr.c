@@ -6,13 +6,11 @@
 /*   By: audgiova <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/05 18:30:04 by audgiova          #+#    #+#             */
-/*   Updated: 2026/06/05 18:30:07 by audgiova         ###   ########.fr       */
+/*   Updated: 2026/06/11 17:34:49 by audgiova         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-
-char	*ft_strchr(const char *s, int c);
 
 char	*ft_strchr(const char *s, int c)
 {
@@ -21,11 +19,11 @@ char	*ft_strchr(const char *s, int c)
 	i = 0;
 	while (i <= ft_strlen(s))
 	{
-		if(s[i] == (char) c)
+		if (s[i] == (char) c)
 		{
-			return((char *)&s[i]);
+			return ((char *) &s[i]);
 		}
 		i++;
 	}
-	return('\0');
+	return ('\0');
 }

@@ -6,17 +6,15 @@
 /*   By: audgiova <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/05 16:48:48 by audgiova          #+#    #+#             */
-/*   Updated: 2026/06/05 16:48:50 by audgiova         ###   ########.fr       */
+/*   Updated: 2026/06/11 17:35:11 by audgiova         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <libft.h>
 
-size_t	ft_strlen(char *str);
-
 size_t	ft_strlen(char *str)
 {
-	size_t i;
+	size_t	i;
 
 	i = 0;
 	while (str[i] != '\0')

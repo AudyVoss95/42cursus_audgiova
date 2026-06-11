@@ -6,13 +6,11 @@
 /*   By: audgiova <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/05 16:43:14 by audgiova          #+#    #+#             */
-/*   Updated: 2026/06/05 16:43:16 by audgiova         ###   ########.fr       */
+/*   Updated: 2026/06/11 17:36:07 by audgiova         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_toupper(int c);
-
-int ft_toupper(int c)
+int	ft_toupper(int c)
 {
 	if (c >= 'a' && c <= 'z')
 	{
