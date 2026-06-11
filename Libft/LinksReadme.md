@@ -8,3 +8,4 @@ https://www.ime.usp.br/~pf/algoritmos/aulas/aloca.html
 https://stackoverflow.com/questions/18094290/how-does-if-variable-whilevariable-work-in-c-programming
 https://stackoverflow.com/questions/36391599/understanding-character-pointers-in-a-while-loop
 https://stackoverflow.com/questions/68954500/working-with-character-pointers-null-in-while-loop
+ 
