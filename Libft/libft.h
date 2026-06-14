@@ -6,14 +6,14 @@
 /*   By: audgiova <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/05 16:25:00 by audgiova          #+#    #+#             */
-/*   Updated: 2026/06/13 16:13:26 by audgiova         ###   ########.fr       */
+/*   Updated: 2026/06/14 19:59:34 by audgiova         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIBFT_H
 # define LIBFT_H
 
-# include <stdio.h>
+# include <unistd.h>
 # include <stdlib.h>
 
 int		ft_isalpha(int c);
@@ -38,4 +38,5 @@ int		ft_atoi(const char *nptr);
 void	*ft_calloc(size_t nmemb, size_t size);
 char	*ft_strdup(const char *s);
 size_t	ft_strlcat(char *dst, const char *src, size_t dstsize);
+char	*ft_substr(char const *s, unsigned int start, size_t len);
 #endif // DEBUG
