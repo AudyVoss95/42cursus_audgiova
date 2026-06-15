@@ -6,11 +6,11 @@
 /*   By: audgiova <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/11 16:02:31 by audgiova          #+#    #+#             */
-/*   Updated: 2026/06/11 17:25:03 by audgiova         ###   ########.fr       */
+/*   Updated: 2026/06/14 20:49:57 by audgiova         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <libft.h>
+#include "libft.h"
 
 int	ft_atoi(const char *nptr)
 {

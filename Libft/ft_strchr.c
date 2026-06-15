@@ -6,7 +6,7 @@
 /*   By: audgiova <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/05 18:30:04 by audgiova          #+#    #+#             */
-/*   Updated: 2026/06/11 17:34:49 by audgiova         ###   ########.fr       */
+/*   Updated: 2026/06/14 20:52:52 by audgiova         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,10 @@
 
 char	*ft_strchr(const char *s, int c)
 {
-	int	i;
+	size_t	i;
 
 	i = 0;
-	while (i <= ft_strlen(s))
+	while (i <= ft_strlen((char *)s))
 	{
 		if (s[i] == (char) c)
 		{

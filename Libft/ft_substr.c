@@ -6,11 +6,11 @@
 /*   By: audgiova <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/14 19:39:58 by audgiova          #+#    #+#             */
-/*   Updated: 2026/06/14 20:34:05 by audgiova         ###   ########.fr       */
+/*   Updated: 2026/06/14 20:56:52 by audgiova         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <libft.h>
+#include "libft.h"
 
 char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
@@ -18,7 +18,7 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	size_t	lenght_s;
 	size_t	i;
 
-	lenght_s = ft_strlen(s);
+	lenght_s = ft_strlen((char *)s);
 	if (start > lenght_s)
 	{
 		return ((char *) ft_calloc(1, sizeof(char)));

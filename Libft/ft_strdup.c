@@ -6,18 +6,18 @@
 /*   By: audgiova <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/13 15:30:58 by audgiova          #+#    #+#             */
-/*   Updated: 2026/06/13 16:07:44 by audgiova         ###   ########.fr       */
+/*   Updated: 2026/06/14 20:53:31 by audgiova         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <libft.h>
+#include "libft.h"
 
 char	*ft_strdup(const char *s)
 {
 	size_t	s_len;
 	void	*allocated_memory;
 
-	s_len = ft_strlen(s);
+	s_len = ft_strlen((char *)s);
 	allocated_memory = ft_calloc(s_len + 1, sizeof(char));
 	if (allocated_memory == NULL)
 		return (NULL);

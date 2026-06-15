@@ -6,21 +6,23 @@
 /*   By: audgiova <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/05 17:13:56 by audgiova          #+#    #+#             */
-/*   Updated: 2026/06/11 17:34:31 by audgiova         ###   ########.fr       */
+/*   Updated: 2026/06/14 21:06:38 by audgiova         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <libft.h>
+#include "libft.h"
 
 void	*ft_memset(void *s, int c, size_t n)
 {
-	unsigned char	*pointer;
+	char	*pointer;
+	size_t	i;
 
-	pointer = (unsigned char *)s;
-	while (n > 0)
+	pointer = (char *)s;
+	i = 0;
+	while (i < n)
 	{
-		pointer[n] = (unsigned char) c;
-		n--;
+		pointer[i] = c;
+		i++;
 	}
-	return (pointer);
+	return ((void *)pointer);
 }

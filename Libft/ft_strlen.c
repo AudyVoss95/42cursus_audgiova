@@ -6,11 +6,11 @@
 /*   By: audgiova <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/05 16:48:48 by audgiova          #+#    #+#             */
-/*   Updated: 2026/06/11 17:35:11 by audgiova         ###   ########.fr       */
+/*   Updated: 2026/06/14 20:50:50 by audgiova         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <libft.h>
+#include "libft.h"
 
 size_t	ft_strlen(char *str)
 {

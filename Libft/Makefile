@@ -25,7 +25,8 @@ ft_strrchr.c \
 ft_tolower.c \
 ft_toupper.c \
 ft_substr.c \
-ft_strjoin.c
+ft_strjoin.c \
+ft_strlcpy.c
 
 OBJS = $(SRCS:.c=.o)
 
