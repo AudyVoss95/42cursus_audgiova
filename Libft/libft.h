@@ -6,7 +6,7 @@
 /*   By: audgiova <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/05 16:25:00 by audgiova          #+#    #+#             */
-/*   Updated: 2026/06/14 23:38:10 by audgiova         ###   ########.fr       */
+/*   Updated: 2026/06/15 01:38:13 by audgiova         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,4 +43,5 @@ size_t	ft_strlcpy(char *dst, const char *src, size_t dsize);
 char	*ft_strjoin(char const *s1, char const *s2);
 char	*ft_strtrim(char const *s1, char const *s2);
 char	**ft_split(char const *s, char c);
+char	*ft_itoa(int n);
 #endif // DEBUG
