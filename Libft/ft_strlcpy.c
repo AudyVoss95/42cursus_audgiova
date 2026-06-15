@@ -6,7 +6,7 @@
 /*   By: audgiova <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/14 21:08:34 by audgiova          #+#    #+#             */
-/*   Updated: 2026/06/14 21:20:49 by audgiova         ###   ########.fr       */
+/*   Updated: 2026/06/14 21:27:08 by audgiova         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,5 +27,5 @@ size_t	ft_strlcpy(char *dst, const char *src, size_t dsize)
 		i++;
 	}
 	dst[i] = '\0';
-	return (ft_strlen(src));
+	return (ft_strlen((char *)src));
 }

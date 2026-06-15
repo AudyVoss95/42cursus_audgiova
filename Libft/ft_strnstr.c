@@ -6,7 +6,7 @@
 /*   By: audgiova <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/10 14:59:33 by audgiova          #+#    #+#             */
-/*   Updated: 2026/06/14 20:56:15 by audgiova         ###   ########.fr       */
+/*   Updated: 2026/06/14 22:25:03 by audgiova         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,15 +21,17 @@ char	*ft_strnstr(const char *big, const char *little, size_t len)
 	{
 		return ((char *)big);
 	}
+	if (!big && len == 0)
+		return (NULL);
 	i = 0;
-	while (big[i])
+	while (big[i] && i < len)
 	{
 		j = 0;
-		while (big[i + j] == little[j] && !little[j] && (i + j) < len)
+		while (big[i + j] == little[j] && little[j] && (i + j) < len)
 		{
 			j++;
 		}
-		if (little[j])
+		if (!little[j])
 		{
 			return ((char *)&big[i]);
 		}

@@ -6,7 +6,7 @@
 /*   By: audgiova <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/05 17:36:03 by audgiova          #+#    #+#             */
-/*   Updated: 2026/06/14 20:50:21 by audgiova         ###   ########.fr       */
+/*   Updated: 2026/06/14 21:30:48 by audgiova         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,11 +15,13 @@
 void	ft_bzero(void *s, size_t n)
 {
 	unsigned char	*pointer;
+	size_t			i;
 
 	pointer = (unsigned char *)s;
-	while (n > 0)
+	i = 0;
+	while (i < n)
 	{
-		pointer[n] = '\0';
-		n--;
+		pointer[i] = '\0';
+		i++;
 	}
 }
