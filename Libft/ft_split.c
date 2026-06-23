@@ -79,5 +79,6 @@ char	**ft_split(char const *s, char c)
 		}
 		i++;
 	}
+	str[j] = NULL;
 	return (str);
 }
