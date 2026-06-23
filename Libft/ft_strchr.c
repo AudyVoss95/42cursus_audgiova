@@ -25,5 +25,5 @@ char	*ft_strchr(const char *s, int c)
 		}
 		i++;
 	}
-	return ('\0');
+	return (NULL);
 }
