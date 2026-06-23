@@ -223,6 +223,5 @@ int main(void)
 ### Uso de IA
 
 A IA foi utilizada neste projeto para:
-
 * **Pesquisa**: Levantamento de informações sobre as funções da libc baseado em documentações e referências
 * **Montagem do README**: Estruturação e organização da documentação do projeto, incluindo descrições detalhadas das funções, exemplos de uso e instruções de compilação
