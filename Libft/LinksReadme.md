@@ -8,4 +8,13 @@ https://www.ime.usp.br/~pf/algoritmos/aulas/aloca.html
 https://stackoverflow.com/questions/18094290/how-does-if-variable-whilevariable-work-in-c-programming
 https://stackoverflow.com/questions/36391599/understanding-character-pointers-in-a-while-loop
 https://stackoverflow.com/questions/68954500/working-with-character-pointers-null-in-while-loop
- 
+ https://www.geeksforgeeks.org/c/function-pointer-in-c/
+ https://www.programiz.com/c-programming/c-pointers
+ https://www.geeksforgeeks.org/c/input-output-system-calls-c-create-open-close-read-write/
+ https://man7.org/linux/man-pages/man2/write.2.html
+ https://www.geeksforgeeks.org/dsa/insertion-in-linked-list/
+ https://www.w3schools.com/c/ref_stdlib_calloc.php
+ https://www.tutorialspoint.com/c_standard_library/c_function_malloc.htm
+ https://www.w3schools.com/c/ref_stdlib_malloc.php
+ https://www.geeksforgeeks.org/c/linked-list-in-c/
+ https://www.learn-c.org/en/Linked_lists
