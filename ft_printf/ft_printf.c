@@ -1,29 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strchr.c                                        :+:      :+:    :+:   */
+/*   ft_printf.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: audgiova <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/06/05 18:30:04 by audgiova          #+#    #+#             */
-/*   Updated: 2026/07/06 12:35:51 by audgiova         ###   ########.fr       */
+/*   Created: 2026/07/06 12:04:11 by audgiova          #+#    #+#             */
+/*   Updated: 2026/07/06 13:28:51 by audgiova         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "ft_printf.h"
 
-char	*ft_strchr(const char *s, int c)
+int	ft_check_conversion(char c, va_list args);
+
+int	ft_printf(const char *format, ...)
 {
-	size_t	i;
+	va_list	args;
+	int		i;
+	int		count;
 
+	if (!format || (format[0] == '%' && format[1] == '\0'))
+		return (-1);
 	i = 0;
-	while (i <= ft_strlen((char *)s))
+	count = 0;
+	va_start(args, format);
+	while (format[i])
 	{
-		if (s[i] == (char) c)
+		if (format[i] == '%')
 		{
-			return ((char *) &s[i]);
+			i++;
+			count += ft_check_conversion(format[i], args);
 		}
+		count += ft_putchar(format[i]);
 		i++;
 	}
-	return (NULL);
+	return (count);
 }
