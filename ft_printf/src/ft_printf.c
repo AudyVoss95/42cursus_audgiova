@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_printf.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: audgiova <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: audgiova <audgiova@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/06 12:04:11 by audgiova          #+#    #+#             */
-/*   Updated: 2026/07/14 23:07:23 by audgiova         ###   ########.fr       */
+/*   Updated: 2026/07/15 15:22:50 by audgiova         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,19 @@ int	ft_check_conversion(char c, va_list args)
 	count = 0;
 	if (c == 'c')
 		count += ft_putchar(va_arg(args, int));
-	return (0);
+	else if (c == 's')
+	{
+		count += ft_putstr(va_arg(args, char *));
+	}
+	else if (c == 'x')
+	{
+		count += ft_puthexalow(va_arg(args, unsigned int));
+	}
+	else if (c == 'X')
+	{
+		count += ft_puthexaupper(va_arg(args, unsigned int));
+	}
+	return (count);
 }
 
 int	ft_printf(const char *format, ...)

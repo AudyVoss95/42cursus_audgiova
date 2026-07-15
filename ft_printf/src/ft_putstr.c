@@ -1,27 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf.h                                        :+:      :+:    :+:   */
+/*   ft_putstr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: audgiova <audgiova@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/06/24 18:07:03 by audgiova          #+#    #+#             */
-/*   Updated: 2026/07/15 15:24:01 by audgiova         ###   ########.fr       */
+/*   Created: 2026/07/15 14:59:07 by audgiova          #+#    #+#             */
+/*   Updated: 2026/07/15 15:03:28 by audgiova         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_PRINTF_H
-# define FT_PRINTF_H
+#include "ft_printf.h"
 
-# include <stdarg.h>
-# include "libft.h"
-# include <unistd.h>
-# include <stdlib.h>
+int	ft_putstr(char *str)
+{
+	int	i;
 
-int	ft_printf(const char *format, ...);
-int	ft_putchar(int c);
-int	ft_putstr(char *str);
-int	ft_puthexalow(unsigned int nb);
-int	ft_puthexaupper(unsigned int nb);
-
-#endif // !FT_PRINTF_H
+	if (!str)
+	{
+		str = "(null)";
+	}
+	i = 0;
+	ft_putstr_fd(str, 1);
+	return (1);
+}

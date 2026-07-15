@@ -1,27 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf.h                                        :+:      :+:    :+:   */
+/*   ft_puthexa.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: audgiova <audgiova@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/06/24 18:07:03 by audgiova          #+#    #+#             */
-/*   Updated: 2026/07/15 15:24:01 by audgiova         ###   ########.fr       */
+/*   Created: 2026/07/15 15:24:18 by audgiova          #+#    #+#             */
+/*   Updated: 2026/07/15 15:27:07 by audgiova         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_PRINTF_H
-# define FT_PRINTF_H
+#include "ft_printf.h"
 
-# include <stdarg.h>
-# include "libft.h"
-# include <unistd.h>
-# include <stdlib.h>
+int	ft_puthexalow(unsigned int nb)
+{
+	return (1);
+}
 
-int	ft_printf(const char *format, ...);
-int	ft_putchar(int c);
-int	ft_putstr(char *str);
-int	ft_puthexalow(unsigned int nb);
-int	ft_puthexaupper(unsigned int nb);
-
-#endif // !FT_PRINTF_H
+int	ft_puthexaupper(unsigned int nb)
+{
+	return (1);
+}
