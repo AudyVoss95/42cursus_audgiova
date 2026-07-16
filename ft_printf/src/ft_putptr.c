@@ -6,13 +6,13 @@
 /*   By: audgiova <audgiova@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/16 16:10:38 by audgiova          #+#    #+#             */
-/*   Updated: 2026/07/16 16:22:15 by audgiova         ###   ########.fr       */
+/*   Updated: 2026/07/16 16:39:41 by audgiova         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int	putptr(void *ptr)
+int	ft_putptr(void *ptr)
 {
 	int		counter;
 	char	*prefix;

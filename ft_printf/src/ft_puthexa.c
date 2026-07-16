@@ -6,7 +6,7 @@
 /*   By: audgiova <audgiova@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/15 15:24:18 by audgiova          #+#    #+#             */
-/*   Updated: 2026/07/16 16:14:43 by audgiova         ###   ########.fr       */
+/*   Updated: 2026/07/16 16:45:22 by audgiova         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 int	ft_puthex(unsigned long long nb, char *base)
 {
-	int	count;
-	int	base_len;
+	int					count;
+	unsigned long long	base_len;
 
 	count = 0;
 	base_len = ft_strlen(base);

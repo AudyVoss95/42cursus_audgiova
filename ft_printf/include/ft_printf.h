@@ -6,7 +6,7 @@
 /*   By: audgiova <audgiova@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/24 18:07:03 by audgiova          #+#    #+#             */
-/*   Updated: 2026/07/16 16:26:39 by audgiova         ###   ########.fr       */
+/*   Updated: 2026/07/16 16:44:39 by audgiova         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,6 @@ int	ft_putstr(char *str);
 int	ft_puthex(unsigned long long nb, char *base);
 int	ft_putint(int nb);
 int	ft_putunsignint(unsigned int nb);
-int	putptr(void *ptr);
+int	ft_putptr(void *ptr);
 
 #endif // !FT_PRINTF_H

@@ -1,34 +1,47 @@
 CC = cc
 CFLAGS = -Wall -Wextra -Werror
+
+# Indica ao compilador onde procurar os arquivos .h (cabeçalhos)
+INCLUDES = -I include -I libft
+
 NAME = libftprintf.a
 AR = ar rcs
-SRCS = ft_printf.c \
-ft_putchar.c \
-ft_putstr.c \
-ft_puthexa.c \
-ft_putnbr.c
 
+# 1. Adicionamos o prefixo "src/" em todas as fontes
+SRCS = src/ft_printf.c \
+       src/ft_putchar.c \
+       src/ft_putstr.c \
+       src/ft_puthexa.c \
+       src/ft_putnbr.c \
+       src/ft_putptr.c
+
+# O make vai gerar os .o dentro da própria pasta "src/"
 OBJS = $(SRCS:.c=.o)
+
 LIBFTDIR = libft
-LIBFT = $(LIBFTDIR)/ libft.a
+LIBFT = $(LIBFTDIR)/libft.a
 
 all: $(NAME)
-$(NAME): $(LIBFT) $(OBJS)
+
+$(NAME): libft $(OBJS)
 	cp $(LIBFT) $(NAME)
 	$(AR) $(NAME) $(OBJS)
 
-$(LIBFT):
+libft:
 	@make -C $(LIBFTDIR)
 
-%.o: %.c
-	$(CC) $(CFLAGS) -c $< -o $@
+# 2. Regra de compilação genérica atualizada com as flags de INCLUDE
+src/%.o: src/%.c
+	$(CC) $(CFLAGS) $(INCLUDES) -c $< -o $@
 
-clean: 
+clean:
 	rm -f $(OBJS)
+	@make -C $(LIBFTDIR) clean
 
 fclean: clean
 	rm -f $(NAME)
+	@make -C $(LIBFTDIR) fclean
 
 re: fclean all
 
-.PHONY: all clean fclean re
+.PHONY: all clean fclean re libft

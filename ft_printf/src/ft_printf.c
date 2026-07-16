@@ -6,7 +6,7 @@
 /*   By: audgiova <audgiova@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/06 12:04:11 by audgiova          #+#    #+#             */
-/*   Updated: 2026/07/16 16:25:24 by audgiova         ###   ########.fr       */
+/*   Updated: 2026/07/16 16:44:54 by audgiova         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,10 +26,11 @@ int	ft_check_conversion(char c, va_list args)
 	else if (c == 'u')
 		count += ft_putunsignint(va_arg(args, unsigned int));
 	else if (c == 'x')
-		count += ft_puthex((unsigned long long)\ 
+		count += ft_puthex((unsigned long long) \
 		va_arg(args, unsigned int), "0123456789abcdef");
 	else if (c == 'X')
-		count += ft_puthex((unsigned long long) va_arg(args, unsigned int), "0123456789ABCDEF");
+		count += ft_puthex((unsigned long long) \
+		va_arg(args, unsigned int), "0123456789ABCDEF");
 	else if (c == 'p')
 		count += ft_putptr(va_arg(args, void *));
 	else if (c == '%')
