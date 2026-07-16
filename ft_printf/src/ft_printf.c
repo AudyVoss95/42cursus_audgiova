@@ -6,7 +6,7 @@
 /*   By: audgiova <audgiova@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/06 12:04:11 by audgiova          #+#    #+#             */
-/*   Updated: 2026/07/16 15:03:07 by audgiova         ###   ########.fr       */
+/*   Updated: 2026/07/16 16:25:24 by audgiova         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,11 +24,16 @@ int	ft_check_conversion(char c, va_list args)
 	else if (c == 'i' || c == 'd')
 		count += ft_putint(va_arg(args, int));
 	else if (c == 'u')
-		count += ft_putuint(va_arg(args, unsigned int));
+		count += ft_putunsignint(va_arg(args, unsigned int));
 	else if (c == 'x')
-		count += ft_puthexalow(va_arg(args, unsigned int));
+		count += ft_puthex((unsigned long long)\ 
+		va_arg(args, unsigned int), "0123456789abcdef");
 	else if (c == 'X')
-		count += ft_puthexaupper(va_arg(args, unsigned int));
+		count += ft_puthex((unsigned long long) va_arg(args, unsigned int), "0123456789ABCDEF");
+	else if (c == 'p')
+		count += ft_putptr(va_arg(args, void *));
+	else if (c == '%')
+		count += ft_putchar('%');
 	return (count);
 }
 
@@ -50,8 +55,10 @@ int	ft_printf(const char *format, ...)
 			i++;
 			count += ft_check_conversion(format[i], args);
 		}
-		count += ft_putchar(format[i]);
+		else
+			count += ft_putchar(format[i]);
 		i++;
 	}
+	va_end(args);
 	return (count);
 }

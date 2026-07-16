@@ -6,7 +6,7 @@
 /*   By: audgiova <audgiova@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/16 10:53:04 by audgiova          #+#    #+#             */
-/*   Updated: 2026/07/16 15:06:14 by audgiova         ###   ########.fr       */
+/*   Updated: 2026/07/16 15:56:38 by audgiova         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,12 +23,13 @@ int	ft_putint(int nb)
 	return (len);
 }
 
-int	ft_putuint(unsigned int nb)
+int	ft_putunsignint(unsigned int nb)
 {
 	int	count;
 
 	count = 0;
-	if (nb < 10)
-		count += ft_putchar(nb + '0');
+	if (nb >= 10)
+		count += ft_putunsignint(nb / 10);
+	count += ft_putchar((nb % 10) + '0');
 	return (count);
 }

@@ -1,26 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_puthexa.c                                       :+:      :+:    :+:   */
+/*   ft_putptr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: audgiova <audgiova@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/07/15 15:24:18 by audgiova          #+#    #+#             */
-/*   Updated: 2026/07/16 16:14:43 by audgiova         ###   ########.fr       */
+/*   Created: 2026/07/16 16:10:38 by audgiova          #+#    #+#             */
+/*   Updated: 2026/07/16 16:22:15 by audgiova         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int	ft_puthex(unsigned long long nb, char *base)
+int	putptr(void *ptr)
 {
-	int	count;
-	int	base_len;
+	int		counter;
+	char	*prefix;
 
-	count = 0;
-	base_len = ft_strlen(base);
-	if (nb >= base_len)
-		count += ft_puthex((nb / base_len), base);
-	count += ft_putchar(base[nb % base_len]);
-	return (count);
+	counter = 0;
+	if (!ptr)
+		counter += ft_putstr("(nil)");
+	else
+	{
+		prefix = "0x";
+		counter += ft_putstr(prefix);
+		counter += ft_puthex((unsigned long long) ptr, "0123456789abcdef");
+	}
+	return (counter);
 }
