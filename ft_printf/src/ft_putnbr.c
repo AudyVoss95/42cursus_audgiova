@@ -1,29 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf.h                                        :+:      :+:    :+:   */
+/*   ft_putnbr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: audgiova <audgiova@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/06/24 18:07:03 by audgiova          #+#    #+#             */
-/*   Updated: 2026/07/16 15:03:21 by audgiova         ###   ########.fr       */
+/*   Created: 2026/07/16 10:53:04 by audgiova          #+#    #+#             */
+/*   Updated: 2026/07/16 15:05:34 by audgiova         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_PRINTF_H
-# define FT_PRINTF_H
+#include "ft_printf.h"
 
-# include <stdarg.h>
-# include "libft.h"
-# include <unistd.h>
-# include <stdlib.h>
+int	ft_putint(int nb)
+{
+	char	*str;
+	int		len;
 
-int	ft_printf(const char *format, ...);
-int	ft_putchar(int c);
-int	ft_putstr(char *str);
-int	ft_puthexalow(unsigned int nb);
-int	ft_puthexaupper(unsigned int nb);
-int	ft_putint(int nb);
-int	ft_putuint(unsigned int nb);
+	str = ft_itoa(nb);
+	len = ft_putstr(str);
+	free(str);
+	return (len);
+}
 
-#endif // !FT_PRINTF_H
+int	ft_putuint(unsigned int nb)
+{
+	int	count;
+
+	count = 0;
+	if (nb < 10)
+		count += ft_putchar(nb + '0');
+	return (count);
+}
+// int	ft_putfloat(int nb)
+// {
+// }

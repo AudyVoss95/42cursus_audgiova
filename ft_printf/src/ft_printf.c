@@ -6,7 +6,7 @@
 /*   By: audgiova <audgiova@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/06 12:04:11 by audgiova          #+#    #+#             */
-/*   Updated: 2026/07/15 16:32:01 by audgiova         ###   ########.fr       */
+/*   Updated: 2026/07/16 15:03:07 by audgiova         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,17 +20,15 @@ int	ft_check_conversion(char c, va_list args)
 	if (c == 'c')
 		count += ft_putchar(va_arg(args, int));
 	else if (c == 's')
-	{
 		count += ft_putstr(va_arg(args, char *));
-	}
+	else if (c == 'i' || c == 'd')
+		count += ft_putint(va_arg(args, int));
+	else if (c == 'u')
+		count += ft_putuint(va_arg(args, unsigned int));
 	else if (c == 'x')
-	{
 		count += ft_puthexalow(va_arg(args, unsigned int));
-	}
 	else if (c == 'X')
-	{
 		count += ft_puthexaupper(va_arg(args, unsigned int));
-	}
 	return (count);
 }
 
