@@ -5,7 +5,8 @@ AR = ar rcs
 SRCS = ft_printf.c \
 ft_putchar.c \
 ft_putstr.c \
-ft_puthexa.c
+ft_puthexa.c \
+ft_putnbr.c
 
 OBJS = $(SRCS:.c=.o)
 LIBFTDIR = libft
