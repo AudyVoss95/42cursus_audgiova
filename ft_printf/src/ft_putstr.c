@@ -6,7 +6,7 @@
 /*   By: audgiova <audgiova@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/15 14:59:07 by audgiova          #+#    #+#             */
-/*   Updated: 2026/07/15 15:03:28 by audgiova         ###   ########.fr       */
+/*   Updated: 2026/07/15 16:30:20 by audgiova         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,5 +22,6 @@ int	ft_putstr(char *str)
 	}
 	i = 0;
 	ft_putstr_fd(str, 1);
-	return (1);
+	i = ft_strlen(str);
+	return (i);
 }
