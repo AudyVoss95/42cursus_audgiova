@@ -1,5 +1,8 @@
-libft-god/
+Libft/libft-god/
 Libft/.vscode/
 Libft/.vscode/
 Libft/libftTester/
 .vscode/
+*.o
+*.a
+ft_printf/printfTester

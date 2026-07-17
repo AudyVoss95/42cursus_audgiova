@@ -6,7 +6,7 @@
 /*   By: audgiova <audgiova@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/16 16:28:10 by audgiova          #+#    #+#             */
-/*   Updated: 2026/07/16 16:30:40 by audgiova         ###   ########.fr       */
+/*   Updated: 2026/07/17 10:33:09 by audgiova         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,8 +20,8 @@ int	main(void)
 
     printf("=== TESTES FT_PRINTF vs PRINTF ===\n\n");
     printf("--- Teste %%c ---\n");
-    len_orig = printf("Original: [%c] [%c]\n", 'A', '\0');
-    len_mine = ft_printf("Meu    : [%c] [%c]\n", 'A', '\0');
+	len_orig = printf("Original: [%c] [%c]\n", 'A', 'B');
+	len_mine = ft_printf("Meu    : [%c] [%c]\n", 'A', 'B');
     printf("Retornos -> Original: %d | Meu: %d\n\n", len_orig, len_mine);
     printf("--- Teste %%s ---\n");
     len_orig = printf("Original: [%s] [%s]\n", "Ola Mundo", (char *)NULL);
@@ -48,5 +48,6 @@ int	main(void)
     len_orig = printf("Original: [%%] [%%%%]\n");
     len_mine = ft_printf("Meu    : [%%] [%%%%]\n");
     printf("Retornos -> Original: %d | Meu: %d\n\n", len_orig, len_mine);
-    return (0);
+	ft_printf("Meu    : [%%a%%b%%c]\n");
+	return (0);
 }

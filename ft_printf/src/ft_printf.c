@@ -6,7 +6,7 @@
 /*   By: audgiova <audgiova@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/06 12:04:11 by audgiova          #+#    #+#             */
-/*   Updated: 2026/07/16 16:44:54 by audgiova         ###   ########.fr       */
+/*   Updated: 2026/07/17 10:24:08 by audgiova         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,10 +55,13 @@ int	ft_printf(const char *format, ...)
 		{
 			i++;
 			count += ft_check_conversion(format[i], args);
+			i++;
 		}
 		else
+		{
 			count += ft_putchar(format[i]);
-		i++;
+			i++;
+		}
 	}
 	va_end(args);
 	return (count);
