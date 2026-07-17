@@ -2,226 +2,174 @@
 
 ## Descrição
 
-A **libft** é uma biblioteca C que reimplementa as funções mais comuns da libc (biblioteca padrão do C). O objetivo é entender profundamente como essas funções funcionam internamente e dominar conceitos fundamentais de programação em C.
+O **ft_printf** é um projeto do currículo da 42 cujo objetivo é recriar a famosa função `printf` da biblioteca padrão do C (`libc`). Através dele, aprofundamos o entendimento sobre funções variádicas — funções que aceitam um número variável de argumentos — e consolidamos a estruturação de códigos modulares e reutilizáveis.
 
-Este projeto faz parte do currículo da 42 e serve como base para todos os projetos futuros da escola, sendo reutilizada em diversos contextos durante o programa de estudos.
+Após a validação, esta biblioteca pode ser integrada à nossa **libft**, permitindo o seu uso em projetos futuros dentro da escola.
 
 ### Objetivo do Projeto
 
-- Implementar as funções essenciais da libc do zero
-- Aprofundar o conhecimento em manipulação de memória
-- Compreender estruturas de dados e algoritmos básicos
-- Estabelecer boas práticas de programação em C
-- Criar uma biblioteca reutilizável para projetos futuros
+* Reimplementar o comportamento essencial da função `printf` original
+
+
+* Dominar a manipulação de argumentos variáveis em C através da macro `stdarg.h`
+
+* Garantir a contagem exata de bytes impressos, simulando fielmente o valor de retorno original
+
+
+* Praticar a criação de bibliotecas estáticas utilizando a ferramenta `ar`
+
+
+---
 
 ## Descrição Detalhada da Biblioteca
 
-A libft é composta por dois conjuntos principais de funções:
+A biblioteca é compilada como `libftprintf.a` e gerencia as seguintes conversões obrigatórias:
 
-### 1. Funções Parte Obrigatória
+### Funções e Conversões Suportadas
 
-Reimplementações de funções padrão da libc:
+O núcleo do projeto consiste em ler a string de formato caractere por caractere. Quando um `%` é encontrado, o caractere seguinte define a conversão a ser tratada:
 
-#### Funções de Classificação de Caracteres
-- `ft_isalpha()` - Verifica se é uma letra (A-Z, a-z)
-- `ft_isdigit()` - Verifica se é um dígito (0-9)
-- `ft_isalnum()` - Verifica se é alfanumérico
-- `ft_isascii()` - Verifica se está na tabela ASCII
-- `ft_isprint()` - Verifica se é imprimível
+* `%c` - Escreve um único caractere
 
-#### Funções de Conversão
-- `ft_toupper()` - Converte para maiúscula
-- `ft_tolower()` - Converte para minúscula
-- `ft_atoi()` - Converte string para inteiro
-- `ft_itoa()` - Converte inteiro para string
 
-#### Funções de Manipulação de Memória
-- `ft_memset()` - Preenche memória com um valor
-- `ft_bzero()` - Limpa (zera) uma área de memória
-- `ft_memcpy()` - Copia memória (áreas não sobrepostas)
-- `ft_memmove()` - Copia memória (áreas podem se sobrepor)
-- `ft_memchr()` - Busca um byte na memória
-- `ft_memcmp()` - Compara áreas de memória
-- `ft_calloc()` - Aloca memória inicializada com zero
+* `%s` - Escreve uma string (cadeia de caracteres comuns)
 
-#### Funções de Manipulação de Strings
-- `ft_strlen()` - Retorna o tamanho da string
-- `ft_strchr()` - Busca um caractere na string (primeira ocorrência)
-- `ft_strrchr()` - Busca um caractere na string (última ocorrência)
-- `ft_strncmp()` - Compara n caracteres de duas strings
-- `ft_strnstr()` - Busca uma substring dentro de n caracteres
-- `ft_strlcpy()` - Copia string com limite de tamanho (segura)
-- `ft_strlcat()` - Concatena string com limite de tamanho (segura)
-- `ft_strdup()` - Duplica uma string
-- `ft_strjoin()` - Concatena duas strings com alocação dinâmica
-- `ft_strtrim()` - Remove caracteres de um conjunto das extremidades
-- `ft_substr()` - Extrai uma substring
-- `ft_split()` - Divide uma string por um delimitador
-- `ft_strmapi()` - Aplica uma função a cada caractere (com índice)
-- `ft_striteri()` - Itera sobre cada caractere aplicando uma função
 
-#### Funções de Escrita
-- `ft_putchar_fd()` - Escreve um caractere em um file descriptor
-- `ft_putstr_fd()` - Escreve uma string em um file descriptor
-- `ft_putendl_fd()` - Escreve uma string com quebra de linha
-- `ft_putnbr_fd()` - Escreve um número em um file descriptor
+* `%p` - Escreve o endereço de um ponteiro `void` em formato hexadecimal
 
-### 2. Funções Parte Bônus - Manipulação de Listas Ligadas
 
-Implementação de estrutura de dados e operações em lista ligada simples:
+* `%d` - Escreve um número decimal em base 10 com sinal
 
-```c
-typedef struct s_list
-{
-    void            *content;
-    struct s_list   *next;
-}   t_list;
 
-```
+* `%i` - Escreve um inteiro em base 10
 
-* `ft_lstnew()` - Cria um novo nó
-* `ft_lstadd_front()` - Adiciona um nó no início
-* `ft_lstadd_back()` - Adiciona um nó no final
-* `ft_lstsize()` - Retorna o tamanho da lista
-* `ft_lstlast()` - Retorna o último nó
-* `ft_lstiter()` - Itera sobre cada nó aplicando uma função
-* `ft_lstmap()` - Cria uma nova lista aplicando uma função
-* `ft_lstdelone()` - Deleta um nó
-* `ft_lstclear()` - Deleta toda a lista
+
+* `%u` - Escreve um número decimal sem sinal (unsigned)
+
+
+* `%x` - Escreve um número em formato hexadecimal (base 16) com letras minúsculas
+
+
+* `%X` - Escreve um número em formato hexadecimal (base 16) com letras maiúsculas
+
+
+* `%%` - Escreve o próprio caractere de percentagem
+
+
+
+---
+
+## Justificação do Algoritmo e Estrutura de Dados
+
+### 1. Estrutura de Dados: Funções Variádicas
+
+Como o `ft_printf` precisa receber um número imprevisível de parâmetros, a estrutura de controle utilizada baseia-se nas macros de `<stdarg.h>`:
+
+* `va_list`: Uma lista que armazena os argumentos variáveis.
+
+
+* `va_start`: Inicializa a lista ligando-a ao último parâmetro fixo (`format`).
+
+
+* `va_arg`: Resgata o próximo argumento da lista, exigindo a especificação do tipo de dado correto.
+
+
+* `va_end`: Limpa a memória associada à lista de argumentos.
+
+
+
+### 2. Algoritmo de Fluxo Principal
+
+O algoritmo adota uma abordagem linear e condicional:
+
+1. Um loop percorre a string `format` até encontrar o caractere nulo `\0`.
+
+
+2. **Se** o caractere atual for diferente de `%`, ele é impresso diretamente usando `ft_putchar` e o contador de bytes é incrementado.
+3. **Se** o caractere for `%`, o índice avança para avaliar o especificador. A função `ft_check_conversion` intercepta o caractere correspondente e despacha o argumento da `va_list` para a função auxiliar adequada (ex: `ft_puthexa`, `ft_putnbr`).
+
+
+4. Cada função auxiliar é responsável por realizar a escrita através da chamada de sistema `write` e retornar o número exato de bytes exibidos na tela, mantendo o acumulador global atualizado.
+
+
+
+---
 
 ## Instruções de Compilação e Uso
 
 ### Pré-requisitos
 
-* GCC ou Clang
-* Make
-* Linux/Unix
+* Compilador `cc` ou `gcc`
+
+* Ferramenta `Make`
+
+* Ambiente baseado em Linux/Unix
+
+
 
 ### Compilação
 
-Para compilar a biblioteca:
+Para compilar a biblioteca e gerar o arquivo estático `libftprintf.a` na raiz do repositório:
 
 ```bash
 make
 
 ```
 
-Isso gera `libft.a` - a biblioteca estática.
+### Regras do Makefile
 
-Para compilar tudo e depois limpar os arquivos objeto:
+* `make all` - Compila os arquivos fonte da `libft` e do `ft_printf`, gerando a biblioteca.
 
-```bash
-make all
 
-```
+* `make clean` - Remove os arquivos objeto (`*.o`) criados durante a compilação.
 
-### Limpeza
 
-Para remover os arquivos objeto:
+* `make fclean` - Remove os arquivos objeto e o arquivo final `libftprintf.a`.
 
-```bash
-make clean
 
-```
+* `make re` - Executa o `fclean` e o `all` em sequência para uma recompilação limpa.
 
-Para remover tudo (objeto e biblioteca):
 
-```bash
-make fclean
-
-```
-
-Para limpar e recompilar:
-
-```bash
-make re
-
-```
 
 ### Uso da Biblioteca
 
-Para usar a libft em seu projeto:
+Para integrar o `ft_printf` no teu projeto pessoal:
 
-1. Inclua o arquivo de cabeçalho:
+1. Inclui o arquivo de cabeçalho no teu código fonte:
 
 ```c
-#include "libft.h"
+#include "ft_printf.h"
 
 ```
 
-2. Compile seu programa linkando a biblioteca:
+2. Compila o teu programa ligando o arquivo estático da biblioteca e os caminhos de inclusão correspondentes:
+
+
 
 ```bash
-gcc -o seu_programa seu_arquivo.c -L. -lft
-
-```
-
-Ou adicione ao seu Makefile:
-
-```makefile
-LIBS = -L. -lft
-CFLAGS = -Wall -Wextra -Werror
-gcc $(CFLAGS) -o programa main.c $(LIBS)
-
-```
-
-### Exemplo de Uso
-
-```c
-#include "libft.h"
-#include <stdio.h>
-
-int main(void)
-{
-    char    str[] = "Hello, World!";
-    
-    // Verificar características
-    printf("Tamanho: %lu\n", ft_strlen(str));           // 13
-    printf("Maiúscula: %c\n", ft_toupper('a'));         // A
-    
-    // Manipulação de string
-    char *duplicada = ft_strdup(str);
-    char *resultado = ft_strjoin("Prefix: ", str);
-    
-    free(duplicada);
-    free(resultado);
-    
-    return 0;
-}
+cc main.c libftprintf.a -I./include -I./libft -o meu_programa
 
 ```
 
 ---
 
-**Versão**: 1.0
-**Data**: Junho 2026
-**Projeto**: 42 School - libft
-
 ## Recursos
 
 ### Referências Utilizadas
 
-* [TutorialsPoint - memset](https://www.tutorialspoint.com/c_standard_library/c_function_memset.htm)
-* [GeeksforGeeks - size_t data type](https://www.geeksforgeeks.org/c/size_t-data-type-c-language/)
-* [Stack Overflow PT - Importar funções de outro arquivo](https://pt.stackoverflow.com/questions/154070/como-importar-fun%C3%A7%C3%B5es-de-outro-arquivo-em-c)
-* [YouTube - Vídeo de Referência](https://www.youtube.com/watch?v=1Hgl4TU8CB0)
-* [TutorialsPoint - malloc](https://www.tutorialspoint.com/c_standard_library/c_function_malloc.htm)
-* [W3Schools - malloc reference](https://www.w3schools.com/c/ref_stdlib_malloc.php)
-* [IME-USP - Alocação Dinâmica](https://www.ime.usp.br/~pf/algoritmos/aulas/aloca.html)
-* [Stack Overflow - Funcionamento de loops if/while com variáveis](https://stackoverflow.com/questions/18094290/how-does-if-variable-whilevariable-work-in-c-programming)
-* [Stack Overflow - Ponteiros de caracteres em loops while](https://stackoverflow.com/questions/36391599/understanding-character-pointers-in-a-while-loop)
-* [Stack Overflow - Ponteiros de caracteres NULL em loops](https://stackoverflow.com/questions/68954500/working-with-character-pointers-null-in-while-loop)
-* [GeeksforGeeks - Ponteiros de função](https://www.geeksforgeeks.org/c/function-pointer-in-c/)
-* [Programiz - Ponteiros em C](https://www.programiz.com/c-programming/c-pointers)
-* [GeeksforGeeks - Chamadas de sistema I/O](https://www.geeksforgeeks.org/dsa/insertion-in-linked-list/)
-* [Man7.org - Manual da chamada write](https://man7.org/linux/man-pages/man2/write.2.html)
-* [GeeksforGeeks - Inserção em listas ligadas](https://www.geeksforgeeks.org/dsa/insertion-in-linked-list/)
-* [W3Schools - calloc reference](https://www.w3schools.com/c/ref_stdlib_calloc.php)
-* [GeeksforGeeks - Listas ligadas em C](https://www.geeksforgeeks.org/c/linked-list-in-c/)
-* [Learn-C.org - Introdução a Listas Ligadas](https://www.learn-c.org/en/Linked_lists)
+* [Man7.org - Manual Oficial do Printf](https://man7.org/linux/man-pages/man3/printf.3.html) - Para entender o comportamento padrão das conversões e retornos.
+
+
+* [CPlusPlus - stdarg.h reference](https://cplusplus.com/reference/cstdarg/) - Documentação sobre o gerenciamento de argumentos variáveis.
+
+
+* [Man7.org - Manual da chamada de sistema write](https://man7.org/linux/man-pages/man2/write.2.html) - Entendimento técnico do output de dados no file descriptor.
+
+
+* [GeeksforGeeks - Variadic Functions in C](https://www.geeksforgeeks.org/variadic-functions-in-c/) - Conceitos e exemplos práticos de funções variádicas.
 
 ### Uso de IA
 
 A IA foi utilizada neste projeto para:
 * **Pesquisa**: Levantamento de informações sobre as funções da libc baseado em documentações e referências
-* **Montagem do README**: Estruturação e organização da documentação do projeto, incluindo descrições detalhadas das funções, exemplos de uso e instruções de compilação
+* **Montagem do README**: Estruturação e organização da documentação do projeto, incluindo descrições detalhadas das funções, exemplos de uso e instruções de compilação.
