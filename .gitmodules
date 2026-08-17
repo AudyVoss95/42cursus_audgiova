@@ -1,0 +1,3 @@
+[submodule "ft_push_swap"]
+	path = ft_push_swap
+	url = git@github.com:AudyVoss95/ft_push_swap.git

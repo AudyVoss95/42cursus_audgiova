@@ -6,7 +6,7 @@
 /*   By: audgiova <audgiova@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/06 12:04:11 by audgiova          #+#    #+#             */
-/*   Updated: 2026/07/17 10:24:08 by audgiova         ###   ########.fr       */
+/*   Updated: 2026/07/17 15:42:48 by audgiova         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,16 +51,14 @@ int	ft_printf(const char *format, ...)
 	va_start(args, format);
 	while (format[i])
 	{
-		if (format[i] == '%')
+		if (format[i] == '%' && format[i + 1] != '\0')
 		{
-			i++;
-			count += ft_check_conversion(format[i], args);
+			count += ft_check_conversion(format[++i], args);
 			i++;
 		}
 		else
 		{
-			count += ft_putchar(format[i]);
-			i++;
+			count += ft_putchar(format[i++]);
 		}
 	}
 	va_end(args);
