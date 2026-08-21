@@ -6,7 +6,7 @@
 /*   By: audgiova <audgiova@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/08/17 17:33:06 by audgiova          #+#    #+#             */
-/*   Updated: 2026/08/21 14:38:31 by audgiova         ###   ########.fr       */
+/*   Updated: 2026/08/21 15:09:09 by audgiova         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,17 +71,16 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	if (!s2)
 		return (NULL);
 	if (!s1)
-	{
 		len_s1 = 0;
-	}
 	else
-	{
 		len_s1 = ft_strlen((char *)s1);
-	}
 	len_s2 = ft_strlen((char *)s2);
-	buffer = malloc(len_s1 + len_s2 + 1);
+	buffer = (char *)malloc(len_s1 + len_s2 + 1);
+	if (!buffer)
+		return (NULL);
 	ft_memcpy(buffer, s1, len_s1);
 	ft_memcpy(buffer + len_s1, s2, len_s2);
-	free(s1);
+	buffer[len_s1 + len_s2] = '\0';
+	free((void *)s1);
 	return (buffer);
 }
