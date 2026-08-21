@@ -6,7 +6,7 @@
 /*   By: audgiova <audgiova@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/08/17 17:27:42 by audgiova          #+#    #+#             */
-/*   Updated: 2026/08/21 16:03:20 by audgiova         ###   ########.fr       */
+/*   Updated: 2026/08/21 16:59:46 by audgiova         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,7 @@ char	*ft_extract_line(char *storage)
 	return (buffer);
 }
 
-void	ft_clean_storage(char *storage)
+char	*ft_clean_storage(char *storage)
 {
 	int		i;
 	int		j;
@@ -49,41 +49,62 @@ void	ft_clean_storage(char *storage)
 
 	i = 0;
 	while (storage[i] && storage[i] != '\n')
-	{
 		i++;
-	}
 	if (storage[i] == '\0')
 	{
 		free(storage);
 		return (NULL);
 	}
-	j = 0;
-	while (storage[i] && storage[i] != '\n')
+	i++;
+	new_str = (char *)malloc(sizeof(char) * (ft_strlen(storage) - i + 1));
+	if (!new_str)
 	{
-		new_str[j] = storage[i];
-		j++;
-		i++;
+		free(storage);
+		return (NULL);
 	}
+	j = 0;
+	while (storage[i])
+		new_str[j++] = storage[i++];
+	new_str[j] = '\0';
 	free(storage);
 	return (new_str);
 }
 
-char	*get_next_line(int fd)
+char	*read_and_storage(int fd, char *storage)
 {
-	char	*storage;
-	size_t	bytes_read;
 	char	*buffer;
+	ssize_t	bytes_read;
 
+	bytes_read = 1;
+	buffer = malloc(sizeof(char) * (BUFFER_SIZE + 1));
 	while (!ft_strchr(storage, '\n') && bytes_read != 0)
 	{
 		bytes_read = read(fd, buffer, BUFFER_SIZE);
 		if (bytes_read == -1)
 		{
-			free(bytes_read);
+			free(buffer);
+			if (storage)
+				free(storage);
 			return (NULL);
 		}
 		buffer[bytes_read] = '\0';
 		storage = ft_strjoin(storage, buffer);
 	}
+	free(buffer);
 	return (storage);
+}
+
+char	*get_next_line(int fd)
+{
+	static char	*storage;
+	char		*line;
+
+	if (BUFFER_SIZE <= 0 || fd < 0)
+		return (NULL);
+	storage = read_and_store(fd, storage);
+	if (!storage)
+		return (NULL);
+	line = ft_extract_line(storage);
+	storage = (char *)ft_clean_storage(storage);
+	return (line);
 }
