@@ -6,8 +6,13 @@
 /*   By: audgiova <audgiova@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/08/17 17:27:42 by audgiova          #+#    #+#             */
-/*   Updated: 2026/08/17 17:33:45 by audgiova         ###   ########.fr       */
+/*   Updated: 2026/08/21 14:57:09 by audgiova         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "get_next_line.h"
+
+char	*get_next_line(int fd)
+{
+	
+}
