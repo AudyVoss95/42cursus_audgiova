@@ -6,7 +6,7 @@
 /*   By: audgiova <audgiova@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/08/17 17:27:42 by audgiova          #+#    #+#             */
-/*   Updated: 2026/08/21 16:02:22 by audgiova         ###   ########.fr       */
+/*   Updated: 2026/08/21 16:03:20 by audgiova         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,8 +53,10 @@ void	ft_clean_storage(char *storage)
 		i++;
 	}
 	if (storage[i] == '\0')
+	{
 		free(storage);
 		return (NULL);
+	}
 	j = 0;
 	while (storage[i] && storage[i] != '\n')
 	{
