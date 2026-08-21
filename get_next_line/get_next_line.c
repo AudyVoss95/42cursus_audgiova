@@ -6,7 +6,7 @@
 /*   By: audgiova <audgiova@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/08/17 17:27:42 by audgiova          #+#    #+#             */
-/*   Updated: 2026/08/21 17:13:48 by audgiova         ###   ########.fr       */
+/*   Updated: 2026/08/21 17:31:14 by audgiova         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,15 +22,14 @@ char	*ft_extract_line(char *storage)
 		return (NULL);
 	len = 0;
 	while (storage[len] && storage[len] != '\n')
-	{
 		len++;
-	}
 	if (storage[len] == '\n')
-		buffer = (char *)malloc(sizeof(char) * (len + 2));
-	else
-		buffer = (char *)malloc(sizeof(char) * (len + 1));
+		len++;
+	buffer = (char *)malloc(sizeof(char) * (len + 1));
+	if (!buffer)
+		return (NULL);
 	i = 0;
-	while (storage[i])
+	while (i < len)
 	{
 		buffer[i] = storage[i];
 		i++;
