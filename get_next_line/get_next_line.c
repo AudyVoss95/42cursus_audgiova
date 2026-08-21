@@ -6,7 +6,7 @@
 /*   By: audgiova <audgiova@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/08/17 17:27:42 by audgiova          #+#    #+#             */
-/*   Updated: 2026/08/21 16:59:46 by audgiova         ###   ########.fr       */
+/*   Updated: 2026/08/21 17:13:48 by audgiova         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,13 +15,11 @@
 char	*ft_extract_line(char *storage)
 {
 	char	*buffer;
-	char	*temp;
 	int		len;
 	int		i;
 
 	if (!storage || !storage[0])
 		return (NULL);
-	temp = (char *)storage;
 	len = 0;
 	while (storage[len] && storage[len] != '\n')
 	{
@@ -70,7 +68,7 @@ char	*ft_clean_storage(char *storage)
 	return (new_str);
 }
 
-char	*read_and_storage(int fd, char *storage)
+char	*read_and_store(int fd, char *storage)
 {
 	char	*buffer;
 	ssize_t	bytes_read;
