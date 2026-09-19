@@ -6,7 +6,7 @@
 /*   By: audgiova <audgiova@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/08/17 17:33:06 by audgiova          #+#    #+#             */
-/*   Updated: 2026/08/21 17:20:53 by audgiova         ###   ########.fr       */
+/*   Updated: 2026/09/19 12:11:39 by audgiova         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,7 +60,6 @@ void	*ft_memcpy(void *dest, const void *src, size_t n)
 		pointer_dest[i] = pointer_src[i];
 		i++;
 	}
-	pointer_dest[i] = '\0';
 	return (dest);
 }
 
