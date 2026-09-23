@@ -6,3 +6,4 @@ Libft/libftTester/
 *.o
 *.a
 ft_printf/printfTester
+ft_push_swap/push_swap_tester

@@ -1,0 +1,410 @@
+==927840== Memcheck, a memory error detector
+==927840== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
+==927840== Using Valgrind-3.18.1 and LibVEX; rerun with -h for copyright info
+==927840== Command: gcc -Wall -Wextra -Werror get_next_line.c get_next_line_utils.c main.c -o gnl
+==927840== Parent PID: 921143
+==927840== 
+==927840== 
+==927840== HEAP SUMMARY:
+==927840==     in use at exit: 177,402 bytes in 133 blocks
+==927840==   total heap usage: 705 allocs, 572 frees, 252,951 bytes allocated
+==927840== 
+==927840== 6 bytes in 2 blocks are definitely lost in loss record 8 of 93
+==927840==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==927840==    by 0x48F85B: ??? (in /usr/bin/x86_64-linux-gnu-gcc-12)
+==927840==    by 0x411E65: ??? (in /usr/bin/x86_64-linux-gnu-gcc-12)
+==927840==    by 0x4135DF: ??? (in /usr/bin/x86_64-linux-gnu-gcc-12)
+==927840==    by 0x411593: ??? (in /usr/bin/x86_64-linux-gnu-gcc-12)
+==927840==    by 0x41115B: ??? (in /usr/bin/x86_64-linux-gnu-gcc-12)
+==927840==    by 0x4135DF: ??? (in /usr/bin/x86_64-linux-gnu-gcc-12)
+==927840==    by 0x411593: ??? (in /usr/bin/x86_64-linux-gnu-gcc-12)
+==927840==    by 0x4135DF: ??? (in /usr/bin/x86_64-linux-gnu-gcc-12)
+==927840==    by 0x411593: ??? (in /usr/bin/x86_64-linux-gnu-gcc-12)
+==927840==    by 0x41115B: ??? (in /usr/bin/x86_64-linux-gnu-gcc-12)
+==927840==    by 0x4135DF: ??? (in /usr/bin/x86_64-linux-gnu-gcc-12)
+==927840== 
+==927840== 18 bytes in 1 blocks are definitely lost in loss record 24 of 93
+==927840==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==927840==    by 0x48F85B: ??? (in /usr/bin/x86_64-linux-gnu-gcc-12)
+==927840==    by 0x48BBF3: ??? (in /usr/bin/x86_64-linux-gnu-gcc-12)
+==927840==    by 0x40758B: ??? (in /usr/bin/x86_64-linux-gnu-gcc-12)
+==927840==    by 0x4086F6: ??? (in /usr/bin/x86_64-linux-gnu-gcc-12)
+==927840==    by 0x40DFD9: ??? (in /usr/bin/x86_64-linux-gnu-gcc-12)
+==927840==    by 0x406403: ??? (in /usr/bin/x86_64-linux-gnu-gcc-12)
+==927840==    by 0x406767: ??? (in /usr/bin/x86_64-linux-gnu-gcc-12)
+==927840==    by 0x4899D8F: (below main) (libc_start_call_main.h:58)
+==927840== 
+==927840== 18 bytes in 1 blocks are definitely lost in loss record 25 of 93
+==927840==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==927840==    by 0x48F85B: ??? (in /usr/bin/x86_64-linux-gnu-gcc-12)
+==927840==    by 0x48BBF3: ??? (in /usr/bin/x86_64-linux-gnu-gcc-12)
+==927840==    by 0x40758B: ??? (in /usr/bin/x86_64-linux-gnu-gcc-12)
+==927840==    by 0x4086F6: ??? (in /usr/bin/x86_64-linux-gnu-gcc-12)
+==927840==    by 0x416F62: ??? (in /usr/bin/x86_64-linux-gnu-gcc-12)
+==927840==    by 0x40641C: ??? (in /usr/bin/x86_64-linux-gnu-gcc-12)
+==927840==    by 0x406767: ??? (in /usr/bin/x86_64-linux-gnu-gcc-12)
+==927840==    by 0x4899D8F: (below main) (libc_start_call_main.h:58)
+==927840== 
+==927840== 18 bytes in 1 blocks are definitely lost in loss record 26 of 93
+==927840==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==927840==    by 0x48F85B: ??? (in /usr/bin/x86_64-linux-gnu-gcc-12)
+==927840==    by 0x48BBF3: ??? (in /usr/bin/x86_64-linux-gnu-gcc-12)
+==927840==    by 0x40758B: ??? (in /usr/bin/x86_64-linux-gnu-gcc-12)
+==927840==    by 0x4086F6: ??? (in /usr/bin/x86_64-linux-gnu-gcc-12)
+==927840==    by 0x416DA5: ??? (in /usr/bin/x86_64-linux-gnu-gcc-12)
+==927840==    by 0x40641C: ??? (in /usr/bin/x86_64-linux-gnu-gcc-12)
+==927840==    by 0x406767: ??? (in /usr/bin/x86_64-linux-gnu-gcc-12)
+==927840==    by 0x4899D8F: (below main) (libc_start_call_main.h:58)
+==927840== 
+==927840== 18 bytes in 1 blocks are definitely lost in loss record 27 of 93
+==927840==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==927840==    by 0x48F85B: ??? (in /usr/bin/x86_64-linux-gnu-gcc-12)
+==927840==    by 0x48BBF3: ??? (in /usr/bin/x86_64-linux-gnu-gcc-12)
+==927840==    by 0x40758B: ??? (in /usr/bin/x86_64-linux-gnu-gcc-12)
+==927840==    by 0x4077F4: ??? (in /usr/bin/x86_64-linux-gnu-gcc-12)
+==927840==    by 0x416E78: ??? (in /usr/bin/x86_64-linux-gnu-gcc-12)
+==927840==    by 0x40641C: ??? (in /usr/bin/x86_64-linux-gnu-gcc-12)
+==927840==    by 0x406767: ??? (in /usr/bin/x86_64-linux-gnu-gcc-12)
+==927840==    by 0x4899D8F: (below main) (libc_start_call_main.h:58)
+==927840== 
+==927840== 18 bytes in 1 blocks are definitely lost in loss record 28 of 93
+==927840==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==927840==    by 0x48F85B: ??? (in /usr/bin/x86_64-linux-gnu-gcc-12)
+==927840==    by 0x48BBF3: ??? (in /usr/bin/x86_64-linux-gnu-gcc-12)
+==927840==    by 0x40758B: ??? (in /usr/bin/x86_64-linux-gnu-gcc-12)
+==927840==    by 0x4077F4: ??? (in /usr/bin/x86_64-linux-gnu-gcc-12)
+==927840==    by 0x416E9E: ??? (in /usr/bin/x86_64-linux-gnu-gcc-12)
+==927840==    by 0x40641C: ??? (in /usr/bin/x86_64-linux-gnu-gcc-12)
+==927840==    by 0x406767: ??? (in /usr/bin/x86_64-linux-gnu-gcc-12)
+==927840==    by 0x4899D8F: (below main) (libc_start_call_main.h:58)
+==927840== 
+==927840== 18 bytes in 1 blocks are definitely lost in loss record 29 of 93
+==927840==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==927840==    by 0x48F85B: ??? (in /usr/bin/x86_64-linux-gnu-gcc-12)
+==927840==    by 0x48BBF3: ??? (in /usr/bin/x86_64-linux-gnu-gcc-12)
+==927840==    by 0x40758B: ??? (in /usr/bin/x86_64-linux-gnu-gcc-12)
+==927840==    by 0x41144B: ??? (in /usr/bin/x86_64-linux-gnu-gcc-12)
+==927840==    by 0x41115B: ??? (in /usr/bin/x86_64-linux-gnu-gcc-12)
+==927840==    by 0x4135DF: ??? (in /usr/bin/x86_64-linux-gnu-gcc-12)
+==927840==    by 0x411593: ??? (in /usr/bin/x86_64-linux-gnu-gcc-12)
+==927840==    by 0x4135DF: ??? (in /usr/bin/x86_64-linux-gnu-gcc-12)
+==927840==    by 0x411593: ??? (in /usr/bin/x86_64-linux-gnu-gcc-12)
+==927840==    by 0x4135DF: ??? (in /usr/bin/x86_64-linux-gnu-gcc-12)
+==927840==    by 0x411593: ??? (in /usr/bin/x86_64-linux-gnu-gcc-12)
+==927840== 
+==927840== 18 bytes in 1 blocks are definitely lost in loss record 30 of 93
+==927840==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==927840==    by 0x48F85B: ??? (in /usr/bin/x86_64-linux-gnu-gcc-12)
+==927840==    by 0x48BBF3: ??? (in /usr/bin/x86_64-linux-gnu-gcc-12)
+==927840==    by 0x40758B: ??? (in /usr/bin/x86_64-linux-gnu-gcc-12)
+==927840==    by 0x4086F6: ??? (in /usr/bin/x86_64-linux-gnu-gcc-12)
+==927840==    by 0x40C9E4: ??? (in /usr/bin/x86_64-linux-gnu-gcc-12)
+==927840==    by 0x410604: ??? (in /usr/bin/x86_64-linux-gnu-gcc-12)
+==927840==    by 0x4135DF: ??? (in /usr/bin/x86_64-linux-gnu-gcc-12)
+==927840==    by 0x411593: ??? (in /usr/bin/x86_64-linux-gnu-gcc-12)
+==927840==    by 0x4135DF: ??? (in /usr/bin/x86_64-linux-gnu-gcc-12)
+==927840==    by 0x411593: ??? (in /usr/bin/x86_64-linux-gnu-gcc-12)
+==927840==    by 0x4135DF: ??? (in /usr/bin/x86_64-linux-gnu-gcc-12)
+==927840== 
+==927840== 32 bytes in 2 blocks are definitely lost in loss record 42 of 93
+==927840==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==927840==    by 0x48F85B: ??? (in /usr/bin/x86_64-linux-gnu-gcc-12)
+==927840==    by 0x48DCA3: ??? (in /usr/bin/x86_64-linux-gnu-gcc-12)
+==927840==    by 0x4119F2: ??? (in /usr/bin/x86_64-linux-gnu-gcc-12)
+==927840==    by 0x4135DF: ??? (in /usr/bin/x86_64-linux-gnu-gcc-12)
+==927840==    by 0x411593: ??? (in /usr/bin/x86_64-linux-gnu-gcc-12)
+==927840==    by 0x41115B: ??? (in /usr/bin/x86_64-linux-gnu-gcc-12)
+==927840==    by 0x4135DF: ??? (in /usr/bin/x86_64-linux-gnu-gcc-12)
+==927840==    by 0x411593: ??? (in /usr/bin/x86_64-linux-gnu-gcc-12)
+==927840==    by 0x4135DF: ??? (in /usr/bin/x86_64-linux-gnu-gcc-12)
+==927840==    by 0x411593: ??? (in /usr/bin/x86_64-linux-gnu-gcc-12)
+==927840==    by 0x41115B: ??? (in /usr/bin/x86_64-linux-gnu-gcc-12)
+==927840== 
+==927840== 36 bytes in 2 blocks are definitely lost in loss record 43 of 93
+==927840==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==927840==    by 0x48F85B: ??? (in /usr/bin/x86_64-linux-gnu-gcc-12)
+==927840==    by 0x48BBF3: ??? (in /usr/bin/x86_64-linux-gnu-gcc-12)
+==927840==    by 0x40758B: ??? (in /usr/bin/x86_64-linux-gnu-gcc-12)
+==927840==    by 0x4086F6: ??? (in /usr/bin/x86_64-linux-gnu-gcc-12)
+==927840==    by 0x40FF86: ??? (in /usr/bin/x86_64-linux-gnu-gcc-12)
+==927840==    by 0x41032C: ??? (in /usr/bin/x86_64-linux-gnu-gcc-12)
+==927840==    by 0x4135DF: ??? (in /usr/bin/x86_64-linux-gnu-gcc-12)
+==927840==    by 0x411593: ??? (in /usr/bin/x86_64-linux-gnu-gcc-12)
+==927840==    by 0x411469: ??? (in /usr/bin/x86_64-linux-gnu-gcc-12)
+==927840==    by 0x4135DF: ??? (in /usr/bin/x86_64-linux-gnu-gcc-12)
+==927840==    by 0x411593: ??? (in /usr/bin/x86_64-linux-gnu-gcc-12)
+==927840== 
+==927840== 43 bytes in 1 blocks are definitely lost in loss record 48 of 93
+==927840==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==927840==    by 0x48F85B: ??? (in /usr/bin/x86_64-linux-gnu-gcc-12)
+==927840==    by 0x48BBF3: ??? (in /usr/bin/x86_64-linux-gnu-gcc-12)
+==927840==    by 0x417912: ??? (in /usr/bin/x86_64-linux-gnu-gcc-12)
+==927840==    by 0x4061A7: ??? (in /usr/bin/x86_64-linux-gnu-gcc-12)
+==927840==    by 0x406767: ??? (in /usr/bin/x86_64-linux-gnu-gcc-12)
+==927840==    by 0x4899D8F: (below main) (libc_start_call_main.h:58)
+==927840== 
+==927840== 48 bytes in 3 blocks are definitely lost in loss record 50 of 93
+==927840==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==927840==    by 0x48F85B: ??? (in /usr/bin/x86_64-linux-gnu-gcc-12)
+==927840==    by 0x40FAE9: ??? (in /usr/bin/x86_64-linux-gnu-gcc-12)
+==927840==    by 0x40FF3F: ??? (in /usr/bin/x86_64-linux-gnu-gcc-12)
+==927840==    by 0x41032C: ??? (in /usr/bin/x86_64-linux-gnu-gcc-12)
+==927840==    by 0x4135DF: ??? (in /usr/bin/x86_64-linux-gnu-gcc-12)
+==927840==    by 0x411593: ??? (in /usr/bin/x86_64-linux-gnu-gcc-12)
+==927840==    by 0x4135DF: ??? (in /usr/bin/x86_64-linux-gnu-gcc-12)
+==927840==    by 0x411593: ??? (in /usr/bin/x86_64-linux-gnu-gcc-12)
+==927840==    by 0x41115B: ??? (in /usr/bin/x86_64-linux-gnu-gcc-12)
+==927840==    by 0x4135DF: ??? (in /usr/bin/x86_64-linux-gnu-gcc-12)
+==927840==    by 0x411593: ??? (in /usr/bin/x86_64-linux-gnu-gcc-12)
+==927840== 
+==927840== 54 bytes in 3 blocks are definitely lost in loss record 51 of 93
+==927840==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==927840==    by 0x48F85B: ??? (in /usr/bin/x86_64-linux-gnu-gcc-12)
+==927840==    by 0x48BBF3: ??? (in /usr/bin/x86_64-linux-gnu-gcc-12)
+==927840==    by 0x40758B: ??? (in /usr/bin/x86_64-linux-gnu-gcc-12)
+==927840==    by 0x410C3A: ??? (in /usr/bin/x86_64-linux-gnu-gcc-12)
+==927840==    by 0x41115B: ??? (in /usr/bin/x86_64-linux-gnu-gcc-12)
+==927840==    by 0x4135DF: ??? (in /usr/bin/x86_64-linux-gnu-gcc-12)
+==927840==    by 0x411593: ??? (in /usr/bin/x86_64-linux-gnu-gcc-12)
+==927840==    by 0x4135DF: ??? (in /usr/bin/x86_64-linux-gnu-gcc-12)
+==927840==    by 0x411593: ??? (in /usr/bin/x86_64-linux-gnu-gcc-12)
+==927840==    by 0x4135DF: ??? (in /usr/bin/x86_64-linux-gnu-gcc-12)
+==927840==    by 0x411593: ??? (in /usr/bin/x86_64-linux-gnu-gcc-12)
+==927840== 
+==927840== 54 bytes in 3 blocks are definitely lost in loss record 52 of 93
+==927840==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==927840==    by 0x48F85B: ??? (in /usr/bin/x86_64-linux-gnu-gcc-12)
+==927840==    by 0x48BBF3: ??? (in /usr/bin/x86_64-linux-gnu-gcc-12)
+==927840==    by 0x40758B: ??? (in /usr/bin/x86_64-linux-gnu-gcc-12)
+==927840==    by 0x410C79: ??? (in /usr/bin/x86_64-linux-gnu-gcc-12)
+==927840==    by 0x41115B: ??? (in /usr/bin/x86_64-linux-gnu-gcc-12)
+==927840==    by 0x4135DF: ??? (in /usr/bin/x86_64-linux-gnu-gcc-12)
+==927840==    by 0x411593: ??? (in /usr/bin/x86_64-linux-gnu-gcc-12)
+==927840==    by 0x4135DF: ??? (in /usr/bin/x86_64-linux-gnu-gcc-12)
+==927840==    by 0x411593: ??? (in /usr/bin/x86_64-linux-gnu-gcc-12)
+==927840==    by 0x4135DF: ??? (in /usr/bin/x86_64-linux-gnu-gcc-12)
+==927840==    by 0x411593: ??? (in /usr/bin/x86_64-linux-gnu-gcc-12)
+==927840== 
+==927840== 54 bytes in 3 blocks are definitely lost in loss record 53 of 93
+==927840==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==927840==    by 0x48F85B: ??? (in /usr/bin/x86_64-linux-gnu-gcc-12)
+==927840==    by 0x48BBF3: ??? (in /usr/bin/x86_64-linux-gnu-gcc-12)
+==927840==    by 0x40758B: ??? (in /usr/bin/x86_64-linux-gnu-gcc-12)
+==927840==    by 0x4086F6: ??? (in /usr/bin/x86_64-linux-gnu-gcc-12)
+==927840==    by 0x40C9E4: ??? (in /usr/bin/x86_64-linux-gnu-gcc-12)
+==927840==    by 0x410604: ??? (in /usr/bin/x86_64-linux-gnu-gcc-12)
+==927840==    by 0x4135DF: ??? (in /usr/bin/x86_64-linux-gnu-gcc-12)
+==927840==    by 0x411593: ??? (in /usr/bin/x86_64-linux-gnu-gcc-12)
+==927840==    by 0x4135DF: ??? (in /usr/bin/x86_64-linux-gnu-gcc-12)
+==927840==    by 0x411593: ??? (in /usr/bin/x86_64-linux-gnu-gcc-12)
+==927840==    by 0x41115B: ??? (in /usr/bin/x86_64-linux-gnu-gcc-12)
+==927840== 
+==927840== 54 bytes in 3 blocks are definitely lost in loss record 54 of 93
+==927840==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==927840==    by 0x48F85B: ??? (in /usr/bin/x86_64-linux-gnu-gcc-12)
+==927840==    by 0x48BBF3: ??? (in /usr/bin/x86_64-linux-gnu-gcc-12)
+==927840==    by 0x40758B: ??? (in /usr/bin/x86_64-linux-gnu-gcc-12)
+==927840==    by 0x4086F6: ??? (in /usr/bin/x86_64-linux-gnu-gcc-12)
+==927840==    by 0x40C9E4: ??? (in /usr/bin/x86_64-linux-gnu-gcc-12)
+==927840==    by 0x41634A: ??? (in /usr/bin/x86_64-linux-gnu-gcc-12)
+==927840==    by 0x40640D: ??? (in /usr/bin/x86_64-linux-gnu-gcc-12)
+==927840==    by 0x406767: ??? (in /usr/bin/x86_64-linux-gnu-gcc-12)
+==927840==    by 0x4899D8F: (below main) (libc_start_call_main.h:58)
+==927840== 
+==927840== 54 bytes in 3 blocks are definitely lost in loss record 55 of 93
+==927840==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==927840==    by 0x48F85B: ??? (in /usr/bin/x86_64-linux-gnu-gcc-12)
+==927840==    by 0x48BBF3: ??? (in /usr/bin/x86_64-linux-gnu-gcc-12)
+==927840==    by 0x40758B: ??? (in /usr/bin/x86_64-linux-gnu-gcc-12)
+==927840==    by 0x4086F6: ??? (in /usr/bin/x86_64-linux-gnu-gcc-12)
+==927840==    by 0x40FF86: ??? (in /usr/bin/x86_64-linux-gnu-gcc-12)
+==927840==    by 0x41032C: ??? (in /usr/bin/x86_64-linux-gnu-gcc-12)
+==927840==    by 0x4135DF: ??? (in /usr/bin/x86_64-linux-gnu-gcc-12)
+==927840==    by 0x411593: ??? (in /usr/bin/x86_64-linux-gnu-gcc-12)
+==927840==    by 0x410E0F: ??? (in /usr/bin/x86_64-linux-gnu-gcc-12)
+==927840==    by 0x4135DF: ??? (in /usr/bin/x86_64-linux-gnu-gcc-12)
+==927840==    by 0x411593: ??? (in /usr/bin/x86_64-linux-gnu-gcc-12)
+==927840== 
+==927840== 67 bytes in 1 blocks are definitely lost in loss record 60 of 93
+==927840==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==927840==    by 0x48F85B: ??? (in /usr/bin/x86_64-linux-gnu-gcc-12)
+==927840==    by 0x48BBF3: ??? (in /usr/bin/x86_64-linux-gnu-gcc-12)
+==927840==    by 0x40EC0B: ??? (in /usr/bin/x86_64-linux-gnu-gcc-12)
+==927840==    by 0x417570: ??? (in /usr/bin/x86_64-linux-gnu-gcc-12)
+==927840==    by 0x4061A7: ??? (in /usr/bin/x86_64-linux-gnu-gcc-12)
+==927840==    by 0x406767: ??? (in /usr/bin/x86_64-linux-gnu-gcc-12)
+==927840==    by 0x4899D8F: (below main) (libc_start_call_main.h:58)
+==927840== 
+==927840== 67 bytes in 1 blocks are definitely lost in loss record 61 of 93
+==927840==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==927840==    by 0x48F85B: ??? (in /usr/bin/x86_64-linux-gnu-gcc-12)
+==927840==    by 0x48BBF3: ??? (in /usr/bin/x86_64-linux-gnu-gcc-12)
+==927840==    by 0x40EC3E: ??? (in /usr/bin/x86_64-linux-gnu-gcc-12)
+==927840==    by 0x417570: ??? (in /usr/bin/x86_64-linux-gnu-gcc-12)
+==927840==    by 0x4061A7: ??? (in /usr/bin/x86_64-linux-gnu-gcc-12)
+==927840==    by 0x406767: ??? (in /usr/bin/x86_64-linux-gnu-gcc-12)
+==927840==    by 0x4899D8F: (below main) (libc_start_call_main.h:58)
+==927840== 
+==927840== 88 bytes in 1 blocks are definitely lost in loss record 64 of 93
+==927840==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==927840==    by 0x48F8F7: ??? (in /usr/bin/x86_64-linux-gnu-gcc-12)
+==927840==    by 0x414755: ??? (in /usr/bin/x86_64-linux-gnu-gcc-12)
+==927840==    by 0x406197: ??? (in /usr/bin/x86_64-linux-gnu-gcc-12)
+==927840==    by 0x406767: ??? (in /usr/bin/x86_64-linux-gnu-gcc-12)
+==927840==    by 0x4899D8F: (below main) (libc_start_call_main.h:58)
+==927840== 
+==927840== 88 bytes in 1 blocks are definitely lost in loss record 65 of 93
+==927840==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==927840==    by 0x48F8F7: ??? (in /usr/bin/x86_64-linux-gnu-gcc-12)
+==927840==    by 0x412924: ??? (in /usr/bin/x86_64-linux-gnu-gcc-12)
+==927840==    by 0x412FD1: ??? (in /usr/bin/x86_64-linux-gnu-gcc-12)
+==927840==    by 0x411593: ??? (in /usr/bin/x86_64-linux-gnu-gcc-12)
+==927840==    by 0x4123E7: ??? (in /usr/bin/x86_64-linux-gnu-gcc-12)
+==927840==    by 0x413A0C: ??? (in /usr/bin/x86_64-linux-gnu-gcc-12)
+==927840==    by 0x41774C: ??? (in /usr/bin/x86_64-linux-gnu-gcc-12)
+==927840==    by 0x4061A7: ??? (in /usr/bin/x86_64-linux-gnu-gcc-12)
+==927840==    by 0x406767: ??? (in /usr/bin/x86_64-linux-gnu-gcc-12)
+==927840==    by 0x4899D8F: (below main) (libc_start_call_main.h:58)
+==927840== 
+==927840== 88 bytes in 1 blocks are definitely lost in loss record 66 of 93
+==927840==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==927840==    by 0x48F8F7: ??? (in /usr/bin/x86_64-linux-gnu-gcc-12)
+==927840==    by 0x412924: ??? (in /usr/bin/x86_64-linux-gnu-gcc-12)
+==927840==    by 0x410A6E: ??? (in /usr/bin/x86_64-linux-gnu-gcc-12)
+==927840==    by 0x4135DF: ??? (in /usr/bin/x86_64-linux-gnu-gcc-12)
+==927840==    by 0x411593: ??? (in /usr/bin/x86_64-linux-gnu-gcc-12)
+==927840==    by 0x4135DF: ??? (in /usr/bin/x86_64-linux-gnu-gcc-12)
+==927840==    by 0x411593: ??? (in /usr/bin/x86_64-linux-gnu-gcc-12)
+==927840==    by 0x4135DF: ??? (in /usr/bin/x86_64-linux-gnu-gcc-12)
+==927840==    by 0x411593: ??? (in /usr/bin/x86_64-linux-gnu-gcc-12)
+==927840==    by 0x4135DF: ??? (in /usr/bin/x86_64-linux-gnu-gcc-12)
+==927840==    by 0x411593: ??? (in /usr/bin/x86_64-linux-gnu-gcc-12)
+==927840== 
+==927840== 114 bytes in 1 blocks are definitely lost in loss record 67 of 93
+==927840==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==927840==    by 0x48F85B: ??? (in /usr/bin/x86_64-linux-gnu-gcc-12)
+==927840==    by 0x4076CA: ??? (in /usr/bin/x86_64-linux-gnu-gcc-12)
+==927840==    by 0x4086F6: ??? (in /usr/bin/x86_64-linux-gnu-gcc-12)
+==927840==    by 0x416F62: ??? (in /usr/bin/x86_64-linux-gnu-gcc-12)
+==927840==    by 0x40641C: ??? (in /usr/bin/x86_64-linux-gnu-gcc-12)
+==927840==    by 0x406767: ??? (in /usr/bin/x86_64-linux-gnu-gcc-12)
+==927840==    by 0x4899D8F: (below main) (libc_start_call_main.h:58)
+==927840== 
+==927840== 162 (16 direct, 146 indirect) bytes in 1 blocks are definitely lost in loss record 70 of 93
+==927840==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==927840==    by 0x48F85B: ??? (in /usr/bin/x86_64-linux-gnu-gcc-12)
+==927840==    by 0x40FAB1: ??? (in /usr/bin/x86_64-linux-gnu-gcc-12)
+==927840==    by 0x40FF3F: ??? (in /usr/bin/x86_64-linux-gnu-gcc-12)
+==927840==    by 0x41032C: ??? (in /usr/bin/x86_64-linux-gnu-gcc-12)
+==927840==    by 0x4135DF: ??? (in /usr/bin/x86_64-linux-gnu-gcc-12)
+==927840==    by 0x411593: ??? (in /usr/bin/x86_64-linux-gnu-gcc-12)
+==927840==    by 0x4135DF: ??? (in /usr/bin/x86_64-linux-gnu-gcc-12)
+==927840==    by 0x411593: ??? (in /usr/bin/x86_64-linux-gnu-gcc-12)
+==927840==    by 0x4135DF: ??? (in /usr/bin/x86_64-linux-gnu-gcc-12)
+==927840==    by 0x411593: ??? (in /usr/bin/x86_64-linux-gnu-gcc-12)
+==927840==    by 0x4135DF: ??? (in /usr/bin/x86_64-linux-gnu-gcc-12)
+==927840== 
+==927840== 164 bytes in 1 blocks are definitely lost in loss record 71 of 93
+==927840==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==927840==    by 0x48F85B: ??? (in /usr/bin/x86_64-linux-gnu-gcc-12)
+==927840==    by 0x48BBF3: ??? (in /usr/bin/x86_64-linux-gnu-gcc-12)
+==927840==    by 0x4079C4: ??? (in /usr/bin/x86_64-linux-gnu-gcc-12)
+==927840==    by 0x41296D: ??? (in /usr/bin/x86_64-linux-gnu-gcc-12)
+==927840==    by 0x410A6E: ??? (in /usr/bin/x86_64-linux-gnu-gcc-12)
+==927840==    by 0x4135DF: ??? (in /usr/bin/x86_64-linux-gnu-gcc-12)
+==927840==    by 0x411593: ??? (in /usr/bin/x86_64-linux-gnu-gcc-12)
+==927840==    by 0x4135DF: ??? (in /usr/bin/x86_64-linux-gnu-gcc-12)
+==927840==    by 0x411593: ??? (in /usr/bin/x86_64-linux-gnu-gcc-12)
+==927840==    by 0x4135DF: ??? (in /usr/bin/x86_64-linux-gnu-gcc-12)
+==927840==    by 0x411593: ??? (in /usr/bin/x86_64-linux-gnu-gcc-12)
+==927840== 
+==927840== 171 bytes in 3 blocks are definitely lost in loss record 73 of 93
+==927840==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==927840==    by 0x48F85B: ??? (in /usr/bin/x86_64-linux-gnu-gcc-12)
+==927840==    by 0x48BBF3: ??? (in /usr/bin/x86_64-linux-gnu-gcc-12)
+==927840==    by 0x40AFA5: ??? (in /usr/bin/x86_64-linux-gnu-gcc-12)
+==927840==    by 0x41296D: ??? (in /usr/bin/x86_64-linux-gnu-gcc-12)
+==927840==    by 0x410A6E: ??? (in /usr/bin/x86_64-linux-gnu-gcc-12)
+==927840==    by 0x41115B: ??? (in /usr/bin/x86_64-linux-gnu-gcc-12)
+==927840==    by 0x41115B: ??? (in /usr/bin/x86_64-linux-gnu-gcc-12)
+==927840==    by 0x4135DF: ??? (in /usr/bin/x86_64-linux-gnu-gcc-12)
+==927840==    by 0x411593: ??? (in /usr/bin/x86_64-linux-gnu-gcc-12)
+==927840==    by 0x4135DF: ??? (in /usr/bin/x86_64-linux-gnu-gcc-12)
+==927840==    by 0x411593: ??? (in /usr/bin/x86_64-linux-gnu-gcc-12)
+==927840== 
+==927840== 264 bytes in 3 blocks are definitely lost in loss record 75 of 93
+==927840==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==927840==    by 0x48F8F7: ??? (in /usr/bin/x86_64-linux-gnu-gcc-12)
+==927840==    by 0x412924: ??? (in /usr/bin/x86_64-linux-gnu-gcc-12)
+==927840==    by 0x412FD1: ??? (in /usr/bin/x86_64-linux-gnu-gcc-12)
+==927840==    by 0x411593: ??? (in /usr/bin/x86_64-linux-gnu-gcc-12)
+==927840==    by 0x41115B: ??? (in /usr/bin/x86_64-linux-gnu-gcc-12)
+==927840==    by 0x4135DF: ??? (in /usr/bin/x86_64-linux-gnu-gcc-12)
+==927840==    by 0x411593: ??? (in /usr/bin/x86_64-linux-gnu-gcc-12)
+==927840==    by 0x4135DF: ??? (in /usr/bin/x86_64-linux-gnu-gcc-12)
+==927840==    by 0x411593: ??? (in /usr/bin/x86_64-linux-gnu-gcc-12)
+==927840==    by 0x4135DF: ??? (in /usr/bin/x86_64-linux-gnu-gcc-12)
+==927840==    by 0x411593: ??? (in /usr/bin/x86_64-linux-gnu-gcc-12)
+==927840== 
+==927840== 264 bytes in 3 blocks are definitely lost in loss record 76 of 93
+==927840==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==927840==    by 0x48F8F7: ??? (in /usr/bin/x86_64-linux-gnu-gcc-12)
+==927840==    by 0x412924: ??? (in /usr/bin/x86_64-linux-gnu-gcc-12)
+==927840==    by 0x410A6E: ??? (in /usr/bin/x86_64-linux-gnu-gcc-12)
+==927840==    by 0x41115B: ??? (in /usr/bin/x86_64-linux-gnu-gcc-12)
+==927840==    by 0x41115B: ??? (in /usr/bin/x86_64-linux-gnu-gcc-12)
+==927840==    by 0x4135DF: ??? (in /usr/bin/x86_64-linux-gnu-gcc-12)
+==927840==    by 0x411593: ??? (in /usr/bin/x86_64-linux-gnu-gcc-12)
+==927840==    by 0x4135DF: ??? (in /usr/bin/x86_64-linux-gnu-gcc-12)
+==927840==    by 0x411593: ??? (in /usr/bin/x86_64-linux-gnu-gcc-12)
+==927840==    by 0x4135DF: ??? (in /usr/bin/x86_64-linux-gnu-gcc-12)
+==927840==    by 0x411593: ??? (in /usr/bin/x86_64-linux-gnu-gcc-12)
+==927840== 
+==927840== 264 bytes in 3 blocks are definitely lost in loss record 77 of 93
+==927840==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==927840==    by 0x48F8F7: ??? (in /usr/bin/x86_64-linux-gnu-gcc-12)
+==927840==    by 0x412924: ??? (in /usr/bin/x86_64-linux-gnu-gcc-12)
+==927840==    by 0x412FD1: ??? (in /usr/bin/x86_64-linux-gnu-gcc-12)
+==927840==    by 0x411593: ??? (in /usr/bin/x86_64-linux-gnu-gcc-12)
+==927840==    by 0x41115B: ??? (in /usr/bin/x86_64-linux-gnu-gcc-12)
+==927840==    by 0x41115B: ??? (in /usr/bin/x86_64-linux-gnu-gcc-12)
+==927840==    by 0x4135DF: ??? (in /usr/bin/x86_64-linux-gnu-gcc-12)
+==927840==    by 0x411593: ??? (in /usr/bin/x86_64-linux-gnu-gcc-12)
+==927840==    by 0x4135DF: ??? (in /usr/bin/x86_64-linux-gnu-gcc-12)
+==927840==    by 0x411593: ??? (in /usr/bin/x86_64-linux-gnu-gcc-12)
+==927840==    by 0x41115B: ??? (in /usr/bin/x86_64-linux-gnu-gcc-12)
+==927840== 
+==927840== 792 bytes in 9 blocks are definitely lost in loss record 83 of 93
+==927840==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==927840==    by 0x48F8F7: ??? (in /usr/bin/x86_64-linux-gnu-gcc-12)
+==927840==    by 0x412924: ??? (in /usr/bin/x86_64-linux-gnu-gcc-12)
+==927840==    by 0x412FD1: ??? (in /usr/bin/x86_64-linux-gnu-gcc-12)
+==927840==    by 0x411593: ??? (in /usr/bin/x86_64-linux-gnu-gcc-12)
+==927840==    by 0x4135DF: ??? (in /usr/bin/x86_64-linux-gnu-gcc-12)
+==927840==    by 0x411593: ??? (in /usr/bin/x86_64-linux-gnu-gcc-12)
+==927840==    by 0x4135DF: ??? (in /usr/bin/x86_64-linux-gnu-gcc-12)
+==927840==    by 0x411593: ??? (in /usr/bin/x86_64-linux-gnu-gcc-12)
+==927840==    by 0x4135DF: ??? (in /usr/bin/x86_64-linux-gnu-gcc-12)
+==927840==    by 0x411593: ??? (in /usr/bin/x86_64-linux-gnu-gcc-12)
+==927840==    by 0x4135DF: ??? (in /usr/bin/x86_64-linux-gnu-gcc-12)
+==927840== 
+==927840== 4,064 bytes in 1 blocks are definitely lost in loss record 91 of 93
+==927840==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==927840==    by 0x48F85B: ??? (in /usr/bin/x86_64-linux-gnu-gcc-12)
+==927840==    by 0x48DE74: ??? (in /usr/bin/x86_64-linux-gnu-gcc-12)
+==927840==    by 0x414CB3: ??? (in /usr/bin/x86_64-linux-gnu-gcc-12)
+==927840==    by 0x4061C9: ??? (in /usr/bin/x86_64-linux-gnu-gcc-12)
+==927840==    by 0x406767: ??? (in /usr/bin/x86_64-linux-gnu-gcc-12)
+==927840==    by 0x4899D8F: (below main) (libc_start_call_main.h:58)
+==927840== 
+==927840== LEAK SUMMARY:
+==927840==    definitely lost: 7,072 bytes in 62 blocks
+==927840==    indirectly lost: 146 bytes in 9 blocks
+==927840==      possibly lost: 0 bytes in 0 blocks
+==927840==    still reachable: 170,184 bytes in 62 blocks
+==927840==         suppressed: 0 bytes in 0 blocks
+==927840== Reachable blocks (those to which a pointer was found) are not shown.
+==927840== To see them, rerun with: --leak-check=full --show-leak-kinds=all
+==927840== 
+==927840== For lists of detected and suppressed errors, rerun with: -s
+==927840== ERROR SUMMARY: 31 errors from 31 contexts (suppressed: 0 from 0)
