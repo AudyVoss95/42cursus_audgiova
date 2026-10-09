@@ -65,3 +65,20 @@ def __init__(self)-> None:
     def colorize(self, text: str, color_code: str) -> str:
         """Wrap text with the given ANSI color and append the reset code."""
         return "f{color_code}{text}{self.RESET}"
+
+def init_grid(grid: list[list[int]], height: int, width:int) -> list[list[str]]:
+    total_rows = 2 * height + 1
+    total_columns = 2 * width + 1
+    visual_grid  =  [[ 0 for _ in range(total_columns)] for _ in range(total_rows)]
+    visual_grid[2*width+1][2*height+1] = 0
+    for y in range(0,height):
+        for x in range(0, width):
+            """ Position in cell_value ref:
+            Center of grid: grid[2*x+1][2*y+1]
+            North = grid    [2*x+1] [2*y]   Bit (0)= 1 
+            East = grid     [2*x]   [2*y+1] Bit (1)= 2
+            South = grid    [2*x+1] [2*y+2] Bit (2)= 4
+            West = grid     [2*x+2] [2*y+1] Bit (3)= 8"""
+            cell_value = grid[x][y]
+
+
